@@ -7,12 +7,16 @@ class NegociacaoControle {
         this._negociacoesTela = new NegociacoesTela($("#negociacoesTela"));
 
         this._negociacoesTela.atualiza(this._listaNegociacoes);
+        this._mensagem = new Mensagem();
+        this._mensagemTela = new MensagemTela($("#mensagemTela"));
+        this._mensagemTela.atualiza(this._mensagem);
     }
 
     adiciona(event) {
         event.preventDefault();
-
         this._listaNegociacoes.adiciona(this._criaNegociacao());
+        this._mensagem.texto = "Negociação adicionada com sucesso!";
+        this._mensagemTela.atualiza(this._mensagem);
         this._negociacoesTela.atualiza(this._listaNegociacoes);
         this._limpaFormulario();
     }
