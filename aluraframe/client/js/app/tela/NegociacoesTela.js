@@ -1,9 +1,6 @@
-class NegociacoesTela {
-    constructor(elemento) {
-        this._elemento = elemento;
-    }
+class NegociacoesTela extends Tela {
 
-    _template(modelo) {
+    template(modelo) {
         return `
             <table class="table table-hover table-bordered">
                 <thead>
@@ -34,9 +31,5 @@ class NegociacoesTela {
                 </tfoot>
             </table>
         `;
-    }
-
-    atualiza(modelo) {
-        this._elemento.html(this._template(modelo));
     }
 }
